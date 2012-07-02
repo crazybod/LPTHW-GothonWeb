@@ -21,6 +21,7 @@ You want to contribute? You're more than welcome. Here's what you need to know:
 ## Other Notes    
 Make sure to add a sessions folder to the GothonWeb directory, as it holds all the session files for the game. Its kind of needed.
 Also, to run from web.py's builtin server, go to your terminal and type:
+
     $ export PYTHONPATH=$PYTHONPATH:path/to/GothonWeb/gothonweb
     $ cd path/to/GothonWeb/gothonweb
     $ bin/app.py
