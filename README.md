@@ -1,7 +1,7 @@
 LPTHW-GothonWeb
 ===============
 
-* Version: 0.9
+* Version: 0.9.1
 * Website: none yet
 * Source: https://github.com/Acour83/LPTHW-GothonWeb
 * The final project from the book "Learn Python the Hard Way" by Zed A. Shaw (http://learnpythonthehardway.org)
