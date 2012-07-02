@@ -29,4 +29,4 @@ Also, to run from web.py's builtin server, go to your terminal and type:
 - User Login page
 - Scoring System/High Score page
 - Multiple Maps
-- Un-plageristic images (if you're a designer w/ some free time, call me!)
+- Un-plagerize images (if you're a designer w/ some free time, call me!)
