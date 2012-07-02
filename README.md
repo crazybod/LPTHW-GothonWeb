@@ -23,6 +23,5 @@ You want to contribute? Youre more than welcome. Here's what you need to know:
     $ export PYTHONPATH=$PYTHONPATH:path/to/GothonWeb/gothonweb
     $ cd path/to/GothonWeb/gothonweb
     $ bin/app.py
-    def shuffthefrickup(object):
-        pass
+    
 - Add sessions folder after cloning. It will hold all the session details when you run the app.
