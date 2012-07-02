@@ -3,7 +3,7 @@ from random import randint
 
 class Room(object):
 	
-	def __init__(self, name, description, pic):		
+	def __init__(self, name, description, pic, number=None, tries=None):		
 		self.name = name
 		self.description = description
 		self.paths = {}
@@ -11,7 +11,8 @@ class Room(object):
 		self.pic = pic
 		
 		#Random Escape Pod
-		self.digit = str(randint(1,5))
+		self.num = number
+		self.guess = tries
 
 	def go(self, direction):
 		return self.paths.get(direction, None)
@@ -20,7 +21,7 @@ class Room(object):
 		self.paths.update(paths)
 	
 	def options(self):
-		if self.name == "Escape Pod":
+		if self.name == "Laser Weapon Armory" or self.name == "Escape Pod":
 			return "You're on your own, bucko!"
 		elif self.paths == {}:
 			pass
@@ -28,7 +29,8 @@ class Room(object):
 			return self.paths.keys()
 			
 	def leet(self):
-		hints = {'Escape Pod': "You decide to play eenie-meenie-miny-moe with the escape pods. While wildy entertainining, it does nothing for you. So you just go with your gut that says choose pod %r." % self.digit}
+		hints = {'Laser Weapon Armory': "You pull out your pink colored anti-gravimetrical, semi-automatic, ultra-computational scanning device and manage to decipher two out of the three digits needed for the code %r and %r. The order, however is still a mystery" %(n1, n3),
+		'Escape Pod': "You decide to play eenie-meenie-miny-moe with the escape pods. While wildy entertainining, it does nothing for you. So you just go with your gut that says choose pod %r" % self.num}
 		
 		if self.name in hints.keys():
 			self.output = hints.get(self.name)
@@ -37,9 +39,16 @@ class Room(object):
 			
 	def _help(self):
 		self.output = """You are in %s. Your choices are listed above your input bar. For additional help, you can sometimes type 'l33t' for a hint, although it may not work for every room. Other commands are 'Restart', 'Save' and 'Quit'. There's also 'Credits'""" % (self.name)
+
+def generate(num1, num2, num3):
+	global n1
+	n1 = num1
+	global n2
+	n2 = num2
+	global n3
+	n3 = num3
+	return '%d%d%d' % (n1, n2, n3)
 	
-
-
 central_corridor = Room ("Central Corridor", 
 """
 The Gothons of Planet Percal #25 have invaded your ship and destroyed
@@ -70,7 +79,7 @@ neutron bomb in its container. There's a keypad lock on the box
 and you need the code to get the bomb out. Luckily, you have your
 tricorder device which will return 3 possible codes you can use, but
 you only have one chance at it, else the lock will close forever.
-""", "armory.gif")
+""", "armory.gif", generate(randint(0,9), randint(1,5), randint(0,9)), 10)
 
 the_bridge = Room("The Bridge",
 """
@@ -105,7 +114,7 @@ now need to pick one to take. Some of them could be damaged
 but you don't have time to look. There's 5 pods, which one
 do you take. (Remember, it's not very 'l33t' of you, should
 you need a hint)
-""", "escape_pod.gif")
+""", "escape_pod.gif", str(n2), 1)
 
 the_end_winner = Room("The End",
 """
@@ -163,7 +172,7 @@ the bomb. You die knowing they will probably blow up when
 it goes off.""", "death.gif")
 
 escape_pod.add_paths({
-	escape_pod.digit: the_end_winner,
+	'x': the_end_winner,
 	'*': the_end_loser
 })
 
@@ -172,14 +181,9 @@ the_bridge.add_paths({
 	'slowly place the bomb': escape_pod
 })
 
-code1 = randint(100, 300)
-code2 = randint(350, 600)
-code3 = randint(700, 999)
-
 laser_weapon_armory.add_paths({
-	str(code1) : the_bridge,
-	str(code2) : armory_death,
-	str(code3) : armory_death
+	'x' : the_bridge,
+	'*' : armory_death
 })
 
 central_corridor.add_paths({

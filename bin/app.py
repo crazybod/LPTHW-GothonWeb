@@ -61,6 +61,7 @@ class GameEngine(object):
 			return render.show_room(room=session.room)
 		else:
 			return render.you_died()
+
 			
 	def POST(self):
 		form = web.input(action=None)
@@ -68,14 +69,13 @@ class GameEngine(object):
 		# This gets ugly, but until I get better, its all I can do...
 		if form.action and session.room:
 			if '*' in session.room.paths:
-				if form.action in self.commands:
-					self.commands[form.action]()
-				
-				elif form.action == session.room.digit:
-					session.room = session.room.go(session.room.digit)
-				else:
-					session.room = session.room.go('*')
-							
+				if form.action != session.room.num and form.action not in self.commands:
+					session.room.guess -= 1
+					session.room.output = "BZZZTT!! Access Denied. You have %d tries left" % session.room.guess
+					if session.room.guess == 0:
+						session.room = session.room.go('*')
+				elif form.action == session.room.num:
+					session.room = session.room.go('x')			
 			else:
 				transition = session.room.go(form.action)
 				if transition == None:
