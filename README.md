@@ -9,7 +9,8 @@ LPTHW-GothonWeb
 Youre trapped up in space with Gothons everywhere, but you're not going out without a fight. Its up to you to set the last bomb on your ship and get the hell out before it blows.
 Written with the web.py framework
 
-## Quick Start
+## Contributing
+You want to contribute? Youre more than welcome. Here's what you need to know:
 - Clone the repo.
 - Make better.
 
@@ -18,10 +19,9 @@ Written with the web.py framework
 
 ## Other Notes
 - If running from web.py's builtin server, go to your terminal & type:
-    {
-    $export PYTHONPATH=$PYTHONPATH: path/to/GothonWeb/gothonweb
-    $cd path/to/GothonWeb/gothonweb
-    $bin/app.py
-    }
+    
+    export PYTHONPATH=$PYTHONPATH: path/to/GothonWeb/gothonweb
+    cd path/to/GothonWeb/gothonweb
+    bin/app.py
+
 - Add sessions folder after cloning. It will hold all the session details when you run the app.
-- Feel free to improve on, but let me know and show me.
