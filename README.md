@@ -27,5 +27,6 @@ Also, to run from web.py's builtin server, go to your terminal and type:
     
 ## ToDo
 - User Login page
-- High Score
+- Scoring System/High Score page
 - Multiple Maps
+- Un-plageristic images (if you're a designer w/ some free time, call me!)
