@@ -1,6 +1,7 @@
 LPTHW-GothonWeb
 ===============
 
+* Version: 0.9
 * Website: none yet
 * Source: https://github.com/Acour83/LPTHW-GothonWeb
 * The final project from the book "Learn Python the Hard Way" by Zed A. Shaw
@@ -18,4 +19,13 @@ You want to contribute? You're more than welcome. Here's what you need to know:
 - Web.py (http://webpy.org)
 
 ## Other Notes    
-- Add sessions folder after cloning. It will hold all the session details when you run the app.
+Make sure to add a sessions folder to the GothonWeb directory, as it holds all the session files for the game. Its kind of needed.
+Also, to run from web.py's builtin server, go to your terminal and type:
+    $ export PYTHONPATH=$PYTHONPATH:path/to/GothonWeb/gothonweb
+    $ cd path/to/GothonWeb/gothonweb
+    $ bin/app.py
+    
+## ToDo
+- User Login page
+- High Score
+- Multiple Maps
