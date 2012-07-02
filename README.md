@@ -23,7 +23,7 @@ Also, to run from web.py's builtin server, go to your terminal and type:
 
     $ export PYTHONPATH=$PYTHONPATH:path/to/GothonWeb/gothonweb
     $ cd path/to/GothonWeb/gothonweb
-    $ bin/app.py
+    $ python bin/app.py
     
 ## ToDo
 - User Login page
