@@ -17,11 +17,5 @@ You want to contribute? You're more than welcome. Here's what you need to know:
 ## Dependencies
 - Web.py (http://webpy.org)
 
-## Other Notes
-- If running from web.py's builtin server, go to your terminal & type:
-
-    $export PYTHONPATH=$PYTHONPATH:path/to/GothonWeb/gothonweb
-    $cd path/to/GothonWeb/gothonweb
-    $bin/app.py
-    
+## Other Notes    
 - Add sessions folder after cloning. It will hold all the session details when you run the app.
