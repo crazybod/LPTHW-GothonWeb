@@ -17,4 +17,10 @@ Written with the web.py framework
 - Web.py (http://webpy.org)
 
 ## Other Notes
+- If running from web.py's builtin server, go to your terminal & type:
+    $export PYTHONPATH=$PYTHONPATH: path/to/GothonWeb/gothonweb
+    $cd path/to/GothonWeb/gothonweb
+    $bin/app.py
+
+- Add sessions folder after cloning. It will hold all the session details when you run the app.
 - Feel free to improve on, but let me know and show me.
