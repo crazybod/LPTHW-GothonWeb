@@ -10,7 +10,7 @@ Youre trapped up in space with Gothons everywhere, but you're not going out with
 Written with the web.py framework
 
 ## Contributing
-You want to contribute? Youre more than welcome. Here's what you need to know:
+You want to contribute? You're more than welcome. Here's what you need to know:
 - Clone the repo.
 - Make better.
 
